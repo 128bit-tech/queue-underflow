@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :queue_underflow, QueueUnderflow.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("QUEUEUNDERFLOW_USERNAME")
+  password: System.get_env("QUEUEUNDERFLOW_PASSWORD")
   database: "queue_underflow_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

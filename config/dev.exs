@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :queue_underflow, QueueUnderflow.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("QUEUEUNDERFLOW_USERNAME"),
+  password: System.get_env("QUEUEUNDERFLOW_PASSWORD"),
   database: "queue_underflow_dev",
   hostname: "localhost",
   pool_size: 10
